@@ -15,3 +15,8 @@ These images are based on the [rocker/rstudio](https://hub.docker.com/r/rocker/r
 
 Provides PathoScope, PathoStat, and BatchQC. Additional components used by PathoScope are installed with `conda`, including `biopython`, `samtools`, `bowtie2`, `prinseq`, `cutadapt`, `fastqc` and `sra-tools`.
 
+To build this image (instead of pulling from dockerhub):
+```bash
+cd pathosuite-all
+docker build --force-rm -t mlbendall/pathosuite .
+```
