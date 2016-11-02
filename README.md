@@ -64,7 +64,8 @@ BatchQC and PathoStat are launched through RStudio. Start RStudio by launching t
 docker run -d -p 8787:8787 mlbendall/pathosuite
 ```
 
-Now simply open a new window in your browser and go to [http://localhost:8787/](http://localhost:8787/). Default username and password is `rstudio`.
+Now simply open a new window in your browser and go to [http://localhost:8787/](http://localhost:8787/).
+Default username and password is `rstudio`.
 
 > Note: if `localhost` does not point to running server, find the IP address of the image:
 
@@ -142,7 +143,9 @@ where `host-dir` is the absolute path to the local directory you wish to mount, 
 docker run -d -p 8787:8787 -v /Users/$(whoami):/home/rstudio/localhome mlbendall/pathosuite
 ```
 
-This pattern is useful for running PathoScope with inputs and outputs available on the local machine. The following alias creates `pathosuite` as an alias that mounts the current working directory and executes `pathoscope` in a new container:
+This pattern is useful for running PathoScope with inputs and outputs available on the
+local machine. The following alias creates `pathosuite` as an alias that mounts the current
+working directory and executes `pathoscope` in a new container:
 
 ```
 alias pathosuite='docker run -ti -u rstudio -v $(pwd):/hostwd -w /hostwd mlbendall/pathosuite pathoscope'
